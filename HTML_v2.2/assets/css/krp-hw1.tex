@@ -1,0 +1,118 @@
+\documentclass[a4paper,UTF8]{article}
+\usepackage{ctex}
+\usepackage[document]{ragged2e}
+\usepackage{amsmath}
+\begin{document}
+\title{KRP-HW1}
+\author{211300010,易慧宇}
+\date{}
+\maketitle
+\section*{[1]}
+Ontology is a formal, explicit, detailed description of a shared conceptualization. We all know that if a KR model is “computational”, it must have formal vocabulary, semantics and syntax as the foundation. Formal vocabulary is used to translate words to correct elements. Formal semantics determine the interpretation of the words. Formal syntax defines the way an axiom is created. Obviously, a logic-based ontology satisfies all the requirements.
+\section*{[2]}
+Examples: I may have lessons tomorrow.\\
+Opinion: I don’t think so.
+For one hand, the language which has excellent expressive power usually requires complex semantics and syntax. In this situation, the difficulty to compute will be so high. For another hand, if the language has very high expressive power, the computing may can’t finish, which is unacceptable if we really use it.
+\section*{[3]}
+(1). Timo is a cow. / Timo is an animal.\\
+(2). NO.\\
+(3). NO.\\
+(4). Zero.\\
+\section*{[4]}
+(1).\\
+$ChineseCouple\sqsubseteq ( \leq 3 Has.Child)$\\
+Concept names: ChineseCouple,Child\\
+Role names: Has\\
+Nominals: None\\
+(2).\\
+$\{ML\}\sqsubseteq (Course\sqcap (\exists IsTaughtBy.\{SFM\})) $\\
+$\{SFM\}\sqsubseteq (Prefessor \sqcap (\exists WorksAt.\{NJU\}))$\\
+Concept names: Prefessor,Course\\
+Role names: IsTaughtBy,WorksAt\\
+Nominals: ML,SFM,NJU\\
+(3).\\
+$\{NJU\}\sqsubseteq University$\\
+$University\sqsubseteq (\forall HasMember.(School \sqcup Department))$\\
+Concept names: University,School,Department\\
+Role names: HasMember\\
+Nominals: NJU\\
+(4).\\
+$\{NJU\}\sqsubseteq (\geq 30,000 Has.Student)$\\
+Concept names: Student\\
+Role names: Has\\
+Nominals: None\\
+(5).\\
+$(\forall IsMembersOf.AISchool) \sqsubseteq (underguaduates \sqcup graduates \sqcup teachers)$\\
+Concept names: AISchool, underguaduates, graduates, teachers\\
+Role names: IsMembersOf\\
+Nominals: None\\
+(6).\\
+$\{citizenOF\} \sqsubseteq Relation$\\
+$(\exists citizenOF.\top)\sqsupseteq Countries$\\
+Concept names: Relation, Countries\\
+Role names: citizenOF\\
+Nominals: citizenOF\\
+Translation:\\
+(5).$\forall x(IsMemberOf(x, AI School) \rightarrow  Undergraduate(x) \vee  Graduate(x) \vee  Teacher(x))$\\
+(6).$\forall x(\exists y(citizenOf(x, y)) \rightarrow Country(x))$
+\section*{[5]}
+(1). True.\\
+Example: 南大食堂好吃不贵\\
+This ontology has no model.\\
+(2). False.\\
+If there is an ontology with finite models, 
+assume that one model is $\mathcal{I} = (\Delta^\mathcal{I} , \cdot ^\mathcal{I} )$, and let $x\in \Delta^\mathcal{I}$ , I can use $x_0$ to replace x. 
+$x_1,x_2,x_3...$can also replace x, and it is infinite, so there are infinite models.\\
+(3). True.\\
+From (1) and (2), we can deduce that no model and infnite many models are possible,
+but finite models is impossible, so it is true.\\
+(4). True.\\
+If a class C is satistiable and is with respect to $\mathcal{T}$, $\mathcal{T} $ is consistent and it has a model $\mathcal{I}$ , 
+$\mathcal{I} $ is also an interpretation of C. So the interpretation is non-empty.\\
+(5). False.\\
+If it has a non-empty interpretation, it is satistiable.\\
+(6). True.\\
+An unsatisfiable class can be interpreted as an empty set, which is the subclass of any other classes.\\
+
+\section*{[6]}
+$\lnot A : f,h,i$\\
+$\exists r.(A\sqcup B) : d,f$\\
+$\exists s.\exists s.\lnot A : d,e$\\
+$\lnot A \sqcap \lnot B : f,h,i$\\
+$\forall r.(A\sqcup B) : d,f,g,h,i$\\%?
+$\leq 1s.\top : e,f,g,h,i$\\
+
+
+\section*{[7]}
+(1). \\
+$\bullet$ $\emptyset$\\
+$\bullet$ $\{b,c,d,e\}$\\
+$\bullet$ $\{b,c,e\}$\\
+$\bullet$ $\{b,d,e\}$\\
+$\bullet$ $\emptyset$\\
+(2). \\
+$\bullet$ $\emptyset$\\
+$\bullet$ $\{1,2\}$\\
+$\bullet$ $\emptyset$\\
+$\bullet$ $\{1,2,3,4,5,6\}$\\
+$\bullet$ $\{1,2\}$\\
+True\\
+True\\
+True\\
+False\\
+False\\
+
+\section*{[8]}
+(1). True.\\
+Because $C\sqsubseteq D$, I can say that D=C+B, \\
+so $\exists r.D=\exists r.(C+B)=\exists r.C+\exists r.B$, \\
+so $\exists r.C \sqsubseteq \exists r.D$ \\
+(2). False.\\
+Example: let $C^\mathcal{I} =\emptyset $, $r^\mathcal{I}=\{(a,b)\}$, $\top=\{a,b\}$. Obviously,
+$\emptyset \neq {a}$\\
+(3). True.\\
+$\leq 0r.\top$ means there is no model that there is no (x,y) that can interprete r. 
+$(\forall r.\perp)^\top=\emptyset $ , so they are equivalent.\\
+(4). False.\\
+Example: $\top=\{a,b,c,d\}$,\\ $A=\{a\}$, $B=\{b\}$, \\
+$r=\{(c,a),(c,b)\}$,
